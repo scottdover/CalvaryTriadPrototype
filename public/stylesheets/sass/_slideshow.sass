@@ -1,0 +1,20 @@
+// Slideshow properties
+
+$slideshow-height: 450px
+.slideshow
+  height: $slideshow-height
+  background: $green
+  ul
+    width: $width
+    margin: 0 auto
+    li
+      height: $slideshow-height
+  &.home
+    @include background-image(linear-gradient(darken($green, 5%), lighten($green, 5%)))
+
+// Individual Slide properties
+.slideshow
+  .logo-wrap
+    text-align: center
+    img
+      padding-top: 80px

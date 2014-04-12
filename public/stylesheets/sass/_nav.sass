@@ -1,0 +1,42 @@
+// nav styles
+.nav
+  >ul
+    width: $width
+    margin: 0 auto
+    font-size: 20px
+    >li
+      width: 25%
+      float: left
+      position: relative
+      >a
+        display: block
+        text-align: center
+        
+        padding: 15px
+        color: $gray
+        text-rendering: optimizeLegibility
+        -webkit-font-smoothing: antialiased
+        &:hover
+          border-top: 4px solid $orange
+          padding-top: 15px - 4px
+    >li.hovered
+      >a
+        border-left: 1px solid darken($light-gray, 5%)
+        border-right: 1px solid darken($light-gray, 5%)
+        @include box-shadow(0 5px 10px $light-gray)
+        border-top: 4px solid $orange
+        padding-top: 15px - 4px
+    ul
+      font-size: 16px
+      position: absolute
+      top: 100%
+      left: 0
+      display: block
+      background: white
+      border-left: 1px solid darken($light-gray, 5%)
+      border-right: 1px solid darken($light-gray, 5%)
+      @include box-shadow(0 5px 10px $light-gray)
+      width: 100%
+
+
+  border-bottom: 1px solid $light-gray

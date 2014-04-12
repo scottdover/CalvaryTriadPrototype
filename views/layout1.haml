@@ -1,0 +1,37 @@
+!!! 5
+%html
+  %head
+    %title Calvary Prototype
+    %link{rel: 'stylesheet', href: '//brick.a.ssl.fastly.net/Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i'}
+    %link{rel: 'stylesheet', href: '/stylesheets/style.css'}
+  %body{class: file}      
+    .slideshow.home
+      %ul
+        %li
+          .logo-wrap
+            %img.logo{src: '/images/calvary-logo2.png', alt: 'Calvary Triad'}
+            / .notice
+            /   Next service Sun, Apr 13th at 9:00am
+
+    .nav
+      %ul
+        %li.hovered
+          %a{href: '#'} First Time
+          %ul
+            %li
+              %a{href: '#'} A message from Pastor Dave
+            %li
+              %a{href: '#'} What we believe
+            %li
+              %a{href: '#'} What to expect
+            %li
+              %a{href: '#'} Church Staff
+        %li
+          %a{href: '#'} Community
+        %li
+          %a{href: '#'} Contact
+        %li
+          %a{href: '#'} Give Online
+      .cb
+    .container= yield
+    %script{src: '/javascripts/app.js', type: 'text/javascript'}

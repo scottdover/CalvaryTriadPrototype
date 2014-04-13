@@ -3,35 +3,70 @@
   %head
     %title Calvary Prototype
     %link{rel: 'stylesheet', href: '//brick.a.ssl.fastly.net/Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i'}
+    %link{rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Lora:400,400italic'}
+    %link{rel: 'stylesheet', href: '/stylesheets/slick.css'}
     %link{rel: 'stylesheet', href: '/stylesheets/style.css'}
-  %body{class: file}      
-    .slideshow.home
-      %ul
-        %li
+  %body{class: file} 
+    .slideshow
+      %a.btn.left.fa.fa-chevron-left{href: '#', data: {action: 'go-left'}}
+      %a.btn.right.fa.fa-chevron-right{href: '#', data: {action: 'go-right'}}
+      %div.slider
+        %div.slide{data: {slideshow_class: 'home'}}
           .logo-wrap
             %img.logo{src: '/images/calvary-logo2.png', alt: 'Calvary Triad'}
-            / .notice
-            /   Next service Sun, Apr 13th at 9:00am
-
+        %div.slide.abs-img{data: {slideshow_class: 'blue'}}
+          %img{src: '/images/slide1.jpg', alt: 'Slide 1'}
+          .caption
+            .title Come worship with us. 
+            .sub-title
+              Next service Sun, Apr. 13 at 9:00am
+            .buttons
+              %a{href: '#'} I'm New
+              = "&nbsp;&nbsp;"
+              %a{href: '#'} Listen to a sermon
     .nav
-      %ul
-        %li.hovered
-          %a{href: '#'} First Time
-          %ul
-            %li
-              %a{href: '#'} A message from Pastor Dave
-            %li
-              %a{href: '#'} What we believe
-            %li
-              %a{href: '#'} What to expect
-            %li
-              %a{href: '#'} Church Staff
-        %li
-          %a{href: '#'} Community
-        %li
-          %a{href: '#'} Contact
-        %li
-          %a{href: '#'} Give Online
+      .ul-wrap
+        %a.popup-logo{:href=>"/layout1/index"}
+          %img{src: '/images/calvary-logo-horizontal.png', alt: 'Calvary Triad'}
+        %ul
+          %li
+            %a{href: '#'} First Time
+            %ul
+              %li
+                %a{href: '#'} Welcome
+              %li
+                %a{href: '#'} What we believe
+              %li
+                %a{href: '#'} What to expect
+              %li
+                %a{href: '#'} Church staff
+          %li
+            %a{href: '#'} Community
+            %ul
+              %li
+                %a{href: '#'} Sermons
+              %li
+                %a{href: '#'} Events
+              %li
+                %a{href: '#'} Small groups
+              %li
+                %a{href: '#'} Missions
+              %li
+                %a{href: '#'} #CalvaryTriad
+          %li.invisible
+            something
+          %li
+            %a{href: '#'} Contact
+            %ul
+              %li
+                %a{href: '#'} Get in touch
+              %li
+                %a{href: '#'} Church staff
+
+          %li
+            %a{href: '#'} Give Online
       .cb
     .container= yield
+    %script{src: '//code.jquery.com/jquery-2.1.0.min.js', type: 'text/javascript'}
+    %script{src: '/javascripts/slick.min.js', type: 'text/javascript'}
     %script{src: '/javascripts/app.js', type: 'text/javascript'}

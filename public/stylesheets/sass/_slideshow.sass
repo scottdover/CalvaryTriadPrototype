@@ -1,20 +1,78 @@
 // Slideshow properties
 
 $slideshow-height: 450px
+
 .slideshow
   height: $slideshow-height
   background: $green
-  ul
+  .btn
+    position: absolute
+    top: 50%
+    font-size: 30px
+    margin-top: -10px
+    color: white
+    &.left
+      left: 25px
+    &.right
+      right: 25px
+  .caption
+    position: relative
+    z-index: 2
+    color: white
+    padding-top: 130px
+    text-align: center
+    font-family: 'Lora', serif
+    .title, .sub-title
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5)
+    .title
+      font-size: 60px
+      text-rendering: optimizeLegibility
+      -webkit-font-smoothing: antialiased
+    .sub-title
+      font-size: 22px
+      font-style: italic
+      margin-top: -8px
+    .buttons
+      margin-top: 45px
+      a
+        color: white
+        font-family: $helvetica
+        padding: 10px 15px
+        border: 1px solid white
+        &:hover
+          border-color: $orange
+          color: $orange
+          background: white
+
+  >div
     width: $width
     margin: 0 auto
-    li
+    div.slide
       height: $slideshow-height
+      position: relative
+      img
+        z-index: 1
+  @include transition(all 0.5s $ease-out-quart)
   &.home
-    @include background-image(linear-gradient(darken($green, 5%), lighten($green, 5%)))
+    @include transition(all 0.5s $ease-out-quart)
+    background: $green
+  &.blue
+    @include transition(all 0.5s $ease-out-quart)
+    background: #14313f
+  &.red
+    @include transition(all 0.5s $ease-out-quart)
+    background: red
+    
 
 // Individual Slide properties
 .slideshow
   .logo-wrap
+    background: $green
+    height: 450px
+    @include box-shadow(none)
     text-align: center
     img
       padding-top: 80px
+      width: 352px
+      display: block
+      margin: 0 auto
